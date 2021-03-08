@@ -3,7 +3,7 @@
 #include "UI.h"
 
 menu mm1 = { 3, "Test", "âûôâôûâôû","Test3" };
-menu mm2 = { 4, "Vâûâûôô", "ôûâûôâ","Test3" ,"fdfsdfsdfsd" };
+menu mm2 = { 4, "Vâûâûô", "ôûgdgfgfûôâ","Test3" ,"fdfsdfsdfsd" };
 
 
 int main() {
