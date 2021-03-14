@@ -1,25 +1,46 @@
+//Системные includes
+#include <locale.h>
 #include <stdio.h>
+
+//Мои includes )
 #include "DynamicArray.h"
 #include "UI.h"
 
-//menu mm1 = { 3, "Test", "выфвфывфы","Test3" };
-//menu mm2 = { 4, "Vвывыф", "фыgdgfgfыфв","Test3" ,"fdfsdfsdfsd" };
 
-void dumpValue(char* pValue)
-{
-	printf("%c\n", *pValue);
-}
+menu MainMenu = { 4, "Тестирование массива целых чисел", "Тестирование массива типа char","Тестирование массива типа float", "Тестирование работы с функциями" };
+
+
 
 
 int main() {
-	int testArray[10] = { 84, 842, 238, 2399, 12, 434, 13, 434, 34, 0 };
-	/*int ss1 = UserMenu("This is menu 1", mm1);
-	int ss2 = UserMenu("This is menu 2", mm2);*/
-	DynamicArray* myLovedArray = create_DynamicArray(sizeof(int), 10, &intDump);
-	for (int i = 0; i < 10; i++)
-	{
-		*(char *)(myLovedArray->idata[i]) = i + '0';
-	}
-	myLovedArray->map(myLovedArray, &dumpValue);
-
+	char* locale = setlocale(LC_ALL, "");
+	int userChoice = 0;
+	do {
+		userChoice = UserMenu("Выберите предмет тестирования", MainMenu);
+		switch (userChoice)
+		{
+		case 1:
+			printf("Тест_1\n");
+			testMapInDynamicArrayInt();
+			waitingUserPressEnter();
+			break;
+		case 2:
+			printf("Тест_2\n");
+			testMapInDynamicArrayChar();
+			waitingUserPressEnter();
+			break;
+		case 3:
+			printf("Тест_3\n");
+			testMapInDynamicArrayFloat();
+			waitingUserPressEnter();
+			break;
+		case 4:
+			printf("Тест_4\n");
+			testMapInDynamicArrayFunction();
+			waitingUserPressEnter();
+			break;
+		default:
+			break;
+		}
+	} while (userChoice != 0);
 };
