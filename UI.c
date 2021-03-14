@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <locale.h>
 #include <conio.h>
 
 #ifdef _WIN32
@@ -32,57 +31,5 @@ int UserMenu(char* title, menu mmenu)
     printf("%c\n", ch );
     return (int) ch-'0';
 };
-//
-void waitingUserPressEnter(void)
-{
-    char* locale = setlocale(LC_ALL, "");
-    printf("PRESS EBTER MY FRIEND!\n");
-    do {} while (_getch() != 13);
-}
-
-//char* get_str()
-//{
-//    char buf[81] = { 0 };
-//    char* res = null;
-//    int len = 0;
-//    int n = 0;
-//
-//    do {
-//
-//        n = scanf("%80[^\n]", buf);
-//
-//        if (n < 0)
-//        {
-//            if (!res)
-//            {
-//                return null;
-//            }
-//        }
-//        else if (n > 0) {
-//
-//            int chunk_len = strlen(buf);
-//            int str_len = len + chunk_len;
-//            res = realloc(res, str_len + 1); //experiment
-//            memcpy(res + len, buf, chunk_len);
-//            len = str_len;
-//        }
-//        else {
-//            scanf("%*c");
-//        }
-//    } while (n > 0);
-//
-//
-//    if (len > 0)
-//    {
-//        res[len] = '\0'; //experiment
-//        res[len+1] = '\0';
-//    }
-//    else {
-//        res = calloc(1, sizeof(char));
-//        *res = '\0';
-//    }
-//
-//    return res;
-//}
 
 
